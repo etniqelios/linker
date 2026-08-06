@@ -1,0 +1,869 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  background-color: #151515;
+  background-image: url("../img/background-darker.png");
+  background-size: 110px;
+
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+:root {
+  --main-color: rgb(114 34 203);
+}
+
+@font-face {
+  font-family: 'Silkscreen'; /*a name to be used later*/
+  src: url('../fonts/Silkscreen/slkscr.ttf'); /*URL to font*/
+}
+
+* {
+  font-family: Silkscreen;
+
+  transition: 0.2s;
+}
+
+.no-select {
+   -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+#foundation {
+  background-image: url("../img/background-hq.png");
+  background-size: 110px;
+  background-position: center;
+  box-shadow: 0 0 32px black;
+  justify-self: center;
+  animation: 2s entrance;
+}
+
+@keyframes entrance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.banner-bkg {
+  width: 100%;
+  height: 250px;
+  background-image: url("../img/banner-blue.png");
+  background-size: 2000px;
+
+
+  
+  background-position: center;
+  animation: infinite 300s animation;
+  transition: animation;
+
+  border-bottom: 4px dashed #222222;
+}
+
+
+
+.banner-title {
+  position: relative;
+  top: 100px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+}
+
+.banner-bkg-shadow {
+  width: 100%;
+  height: 200px;
+
+  z-index: -1;
+
+  position: relative;
+  top: -150px;
+
+  background-image: url("../img/banner-blue.png");
+  background-size: 2000px;
+
+  filter: blur(200px);
+  background-position: center;
+  animation: infinite 300s animation;
+  transition: animation;
+}
+
+
+
+
+
+@keyframes animation {
+  0% {
+    background-position-x: 100px;
+    background-position-y: 100px;
+  }
+  100% {
+    background-position-x: 10000px;
+    background-position-y: 10000px;
+  }
+}
+
+.section-actions, .section-descriptions, .section-footer, .section-space, .section-information {
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  color: white;
+}
+
+
+.fixed-screen {
+  position: fixed;
+  z-index: 99;
+  justify-self: left;
+}
+
+.fixed-screen a {
+
+  background-color: #00000011;
+  backdrop-filter: blur(50px);
+  padding: 5px;
+  border-bottom: 2px solid white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.desc img {
+  width: 90%;
+  margin-bottom: 25px;
+  border: 2px solid #00000055
+}
+
+.section-actions .flex p {
+  text-align: center;
+  color: #555;
+}
+
+.section-actions .right {
+  text-align: center;
+}
+
+.avatar {
+  border: 4px dashed #686868;
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/Avatar.jpg");
+  background-repeat: no-repeat;
+  box-shadow: inset 0px 0px 10px black;
+  background-size: cover;
+  position: absolute;
+  top: 200px;
+  transform: translateX(183.5px)translateY(0px);
+  z-index: 2;
+  transition: none;
+
+}
+
+
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: auto;
+  z-index: 1;
+}
+
+.desc .content {
+  border: 4px dashed #333333;
+  width: 417px;
+  justify-content: center;
+  overflow: hidden;
+  height: auto;
+  padding: 25px;
+  margin-top: 25px; 
+  background-image: url("../img/empty-background.png");
+  box-shadow: inset 0px 0px 20px #000000AA;
+  z-index: 1;
+}
+
+
+.space .content {
+  border: 4px dashed #33333311;
+  width: 417px;
+  justify-content: center;
+  overflow: hidden;
+  height: auto;
+  padding: 10px 25px 10px 25px;
+  margin-top: 25px;
+  background-image: url("../img/empty-background.png");
+  box-shadow: inset 0px 0px 20px #000000AA;
+  z-index: 1;
+}
+
+.title .content {
+  border: 4px dashed #333333;
+  width: 417px;
+  justify-content: center;
+  overflow: hidden;
+  height: auto;
+  padding: 0 25px 0 25px;
+  background-image: url("../img/empty-background.png");
+  box-shadow: inset 0px 0px 20px #000000AA;
+  text-align: center;
+  z-index: 1;
+}
+
+.footer .content {
+  border: 4px dashed #333333;
+  width: 417px;
+  justify-content: center;
+  overflow: hidden;
+  height: auto;
+  padding: 0 25px 0 25px;
+  margin-top: 25px;
+
+  background-image: url("../img/empty-background.png");
+  box-shadow: inset 0px 0px 20px #000000AA;
+  z-index: 1;
+  text-align: center;
+}
+
+
+
+.btn-lknr {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.1s;
+}
+
+
+.null {
+  color: rgb(109, 109, 109);
+  background-color: #4949493f;
+}
+
+.youtube {
+  color: white;
+  background-color: #ff00003f;
+
+}
+
+.youtube:hover {
+  background-color: #ff0000AA;
+}
+
+.soundcloud {
+  color: white;
+  background-color: #ff55003f;
+
+}
+
+.soundcloud:hover {
+  background-color: #ff5500AA;
+}
+
+
+.github {
+  color: white;
+  background-color: #1456ac3f;
+}
+
+.github:hover {
+  background-color: #1456acAA;
+}
+
+.samplefocus{
+  color: white;
+  background-color: #ffffff3f;
+}
+
+.samplefocus:hover {
+  background-color: #ffffffAA;
+  color: black;
+}
+
+.unity {
+  color: white;
+  background-color: #8fa2bb3f;
+}
+
+.unity:hover {
+  background-color: #8fa2bbAA;
+}
+
+.github:hover {
+  background-color: #1456acAA;
+}
+
+.sml {
+  font-size: 15px;
+  padding: 10px 0px;
+}
+
+
+.smlst {
+  font-size: 11px;
+  padding: 10px 0px;
+}
+
+.margin-6 {
+  margin: 20px;
+}
+
+
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-flex a {
+  width: 50%;
+  height: 25px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px dashed #fff;
+  transition: border 0s;
+}
+
+.center-grid:hover {
+  color: #75a4cf;
+  border-bottom: 2px dashed #75a4cf;;
+}
+
+hr {
+  margin: 8px 0 8px 0;
+  border: 0;
+  height: 5px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #8f8f8f55, rgba(0, 0, 0, 0));
+}
+
+.lknr-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 10px;
+  animation: 2s lnkr-icon;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+  transition: 0.5s;
+}
+
+ .right {
+    scale: 0.83;
+    position: relative;
+    left: 5px;
+    width: 50%;
+  }
+
+@keyframes lnkr-icon {
+  0% { 
+    opacity: 0;  
+    transform: rotateX(90deg);
+  }
+  50% { 
+    opacity: 1;  
+    transform: rotateX(90deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+
+.fluxer {
+  color: white;
+  background-color: transparent;
+}
+
+.footer-fixed {
+  border-top: 4px dashed #333333;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-image: url("../img/empty-background.png");
+  z-index: 3;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}
+
+
+.--span-blue {
+  color: #75a4cf;
+}
+
+.--span-gray {
+  color: #979797;
+}
+
+.--span-green {
+  color: #75cf75;
+}
+
+.--span-orange {
+  color: #cfa875;
+}
+
+
+.colorize-text {
+  display: flex;
+  gap: 0.1em;
+}
+
+.colorize-text span {
+  display: inline-block; 
+  font-weight: bold;
+  color: #222222;
+  
+  
+  animation: ColorChange 2s infinite linear;
+  
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+
+
+@keyframes ColorChange {
+  0% {
+    color: hsl(210, 100%, 55%);
+  }
+  10% {
+    color: hsl(210, 100%, 55%);
+  }
+  20% {
+    color: hsl(210, 100%, 60%);
+  }
+  30% {
+    color: hsl(210, 100%, 75%);
+  }
+  40% {
+    color: hsl(210, 100%, 80%);
+  }
+  50% {
+    color: hsl(210, 100%, 85%);
+  }
+  60% {
+    color: hsl(210, 100%, 80%);
+  }
+  70% {
+    color: hsl(210, 100%, 75%);
+  }
+  80% {
+    color: hsl(210, 100%, 70%);
+  }
+  90% {
+    color: hsl(210, 100%, 65%);
+  }
+  100% {
+    color: hsl(210, 100%, 60%);
+  }
+  
+}
+
+.swimming-text {
+  padding: 10px;
+  font-size: 22px;
+} 
+
+.swimming-text span {
+  display: inline-block; 
+  font-weight: bold;
+  color: #fff;
+  
+  
+  animation: SwimmingText 2.5s infinite linear;
+  
+  animation-delay: calc(var(--i) * 0.2s);
+  position: relative;
+}
+
+@keyframes SwimmingText {
+  0% {
+    top: 0px;
+  }
+  10% {
+    top: 1px;
+  }
+  20% {
+    top: 2px;
+  }
+  30% {
+    top: 3px;
+  }
+  40% {
+    top: 4px;
+  }
+  50% {
+    top: 5px;
+  }
+  60% {
+    top: 4px;
+  }
+  70% {
+    top: 3px;
+  }
+  80% {
+    top: 2px;
+  }
+  90% {
+    top: 1px;
+  }
+  100% {
+    top: 0px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  /* .banner-background { 
+
+  } */
+
+  .section-descriptions .desc .content {
+    padding: 15px;
+    width: 350px;
+
+  }
+
+  .section-actions .content {
+    }
+
+  .space .content {
+    padding: 15px;
+    width: 350px;
+  }
+
+  .footer .content {
+    padding: 15px;
+    width: 350px;
+  }
+
+  .right {
+    scale: 0.75;
+    position: relative;
+    left: -17px;
+    width: 50%;
+  }
+
+  @keyframes lnkr-icon {
+    0% {
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }
+  }
+
+
+  .section-actions .content {
+    position: relative;
+    width: 50%;
+  }
+  
+
+  .btn-lknr {
+    padding: 0;
+  }
+
+  .avatar {
+    transform: translateX(143px)translateY(-10px);
+  }
+
+  .lknr-icon {
+    transform: translateX(10px)translateY(-10px);
+  }
+
+  .section-actions {
+    width: 390px;
+    overflow: hidden;
+  }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
